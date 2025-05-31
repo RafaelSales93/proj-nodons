@@ -1,11 +1,17 @@
 package com.example.clinica.controller;
 
-import com.example.clinica.entity.Paciente;
-import com.example.clinica.service.PacienteService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.example.clinica.model.Paciente;
+import com.example.clinica.service.PacienteService;
 
 @RestController
 @RequestMapping("/api/paciente")
@@ -17,11 +23,6 @@ public class PacienteController {
         this.pacienteService = pacienteService;
     }
 
-
-    @GetMapping
-    public List<Paciente> listarPacientes() {
-        return pacienteService.listarPacientesAtivos();
-    }
 
 
     @GetMapping("/{id}")
@@ -48,10 +49,4 @@ public class PacienteController {
         return ResponseEntity.noContent().build();
     }
 
-
-    @PutMapping("/reativar/{id}")
-    public ResponseEntity<Void> reativarPaciente(@PathVariable Long id) {
-        pacienteService.reativarPaciente(id);
-        return ResponseEntity.noContent().build();
-    }
 }

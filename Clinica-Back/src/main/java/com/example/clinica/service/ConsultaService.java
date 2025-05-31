@@ -1,13 +1,14 @@
 package com.example.clinica.service;
 
-import com.example.clinica.entity.Consulta;
-import com.example.clinica.entity.Paciente;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.example.clinica.enums.StatusConsulta;
+import com.example.clinica.model.Consulta;
+import com.example.clinica.model.Paciente;
 import com.example.clinica.repository.ConsultaRepository;
 import com.example.clinica.repository.PacienteRepository;
-import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ConsultaService {
@@ -26,10 +27,6 @@ public class ConsultaService {
         consulta.setStatus(StatusConsulta.AGENDADO);
 
         return consultaRepository.save(consulta);
-    }
-
-    public List<Consulta> listarConsultasAtivas() {
-        return consultaRepository.findByAtivoTrue();
     }
 
     public Consulta atualizarConsulta(Consulta consulta) {
@@ -51,26 +48,14 @@ public class ConsultaService {
     }
 
 
-
-
     public void excluirConsulta(Long id) {
         Optional<Consulta> consultaOptional = consultaRepository.findById(id);
         if (consultaOptional.isPresent()) {
             Consulta consulta = consultaOptional.get();
-            consulta.setAtivo(false);
             consultaRepository.save(consulta);
         } else {
             throw new RuntimeException("Consulta não encontrada!");
         }
-    }
-
-    public List<Consulta>  buscarConsultaPorIdPaciente(Long pacienteId) {
-        List<Consulta> obj = consultaRepository.buscarConsultaPorIdPaciente(pacienteId);
-        return obj;
-    }
-
-    public List<Consulta> buscarTodasConsultasPorPaciente(Long pacienteId) {
-        return consultaRepository.buscarTodasConsultasPorPacienteIncluindoInativas(pacienteId);
     }
 
 

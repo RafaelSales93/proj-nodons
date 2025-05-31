@@ -1,11 +1,10 @@
 package com.example.clinica.controller;
 
-import com.example.clinica.entity.Historico;
-import com.example.clinica.service.HistoricoService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200")
+import com.example.clinica.service.HistoricoService;
+
 @RestController
 @RequestMapping("api/historico")
 public class HistoricoController {
@@ -15,23 +14,4 @@ public class HistoricoController {
         this.historicoService = historicoService;
     }
 
-    @GetMapping()
-    public List<Historico> getAllHistorico() {
-        return historicoService.listarHistoricoAtivos();
-    }
-
-    @GetMapping("/paginado")
-    public List<Historico> getHistoricoPor(@RequestParam String nomePaciente) {
-        return historicoService.listarHistoricoPor(nomePaciente);
-    }
-
-    @GetMapping("/{idConsulta}")
-    public List<Historico> getHistoricoByIdConsulta(@PathVariable Long idConsulta) {
-        return historicoService.getHistoricoByIdConsulta(idConsulta);
-    }
-
-    @GetMapping("/descricao")
-    public List<Historico> getByDescricao(@RequestParam String descricao) {
-        return historicoService.listarDescricaoHistorico(descricao);
-    }
 }

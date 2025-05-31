@@ -1,0 +1,6 @@
+CREATE TABLE bd_clinica.tb_medico (
+    id INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(200) NOT NULL,
+    crm VARCHAR(200) NOT NULL,
+    CONSTRAINT medico_pk PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

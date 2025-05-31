@@ -1,8 +1,19 @@
 package com.example.clinica.enums;
 
 public enum StatusConsulta {
-    ABERTA,
-    AGENDADO,
-    CONCLUIDA,
-    CANCELADA
+
+    ABERTA("Aberta"),
+    AGENDADO("Agendado"),
+    CONCLUIDA("Concluída"),
+    CANCELADA("Cancelada");
+
+    private final String descricao;
+
+    StatusConsulta(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }
