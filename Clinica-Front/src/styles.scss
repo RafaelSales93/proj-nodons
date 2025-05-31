@@ -1,0 +1,88 @@
+.home-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 16px;
+    min-height: calc(100vh - 100px);
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  }
+  
+  .home-wrapper {
+    width: 100%;
+    max-width: 700px;
+  }
+  
+  .home-card {
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: white;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .card-section-title {
+    margin: 32px 0 24px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .button-grid.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+  
+  .action-button {
+    padding: 24px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 14px;
+  }
+  
+  .icon-large {
+    font-size: 32px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .home-footer {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background: #e3f2fd;
+  }
+  
+  .footer-card {
+    padding: 16px 32px;
+    border-radius: 14px;
+    text-align: center;
+    background: linear-gradient(to right, #2196f3, #21cbf3);
+    color: white;
+  }
+  
+  .footer-text {
+    font-size: 16px;
+  }
+    .footer-link {
+        color: #ffeb3b;
+        text-decoration: none;
+        font-weight: bold;
+    }  

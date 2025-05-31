@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>
+  {{ data.consulta ? 'Editar Consulta' : 'Adicionar uma Nova Consulta' }}
+</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formulario" class="formulario-dialog">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data</mat-label>
+      <input matInput type="date" formControlName="data" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="descricao" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Médico</mat-label>
+      <input matInput formControlName="medico" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="salvar()" [disabled]="formulario.invalid">Salvar</button>
+</mat-dialog-actions>

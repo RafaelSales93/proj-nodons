@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">Histórico de Consultas</mat-toolbar>
+
+<mat-card *ngIf="historicosFiltrados.length > 0">
+  <table mat-table [dataSource]="historicosFiltrados" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element"> {{ element.descricao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{ element.data | date: 'dd/MM/yyyy' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ativo">
+      <th mat-header-cell *matHeaderCellDef> Ativo </th>
+      <td mat-cell *matCellDef="let element"> {{ element.ativo ? 'Sim' : 'Não' }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+
+<mat-card *ngIf="historicosFiltrados.length === 0">
+  <p>Nenhum histórico encontrado.</p>
+</mat-card>

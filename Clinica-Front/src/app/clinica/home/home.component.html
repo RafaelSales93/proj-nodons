@@ -1,0 +1,36 @@
+<div class="home-background">
+  <div class="home-wrapper">
+    <mat-card class="home-card gradient-bg">
+      <mat-card-header>
+        <mat-card-title class="title text-center">💉 Bem-vindo à Clínica</mat-card-title>
+        <mat-card-subtitle class="subtitle text-center">
+          Gerencie <strong>consultas</strong> e <strong>pacientes</strong> com facilidade.
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="card-section-title text-center">Serviços</div>
+
+        <div class="button-grid vertical">
+          <button mat-raised-button color="primary" class="action-button" [routerLink]="['/consulta']">
+            <mat-icon class="icon-large">event_note</mat-icon>
+            <span>Consultas</span>
+          </button>
+
+          <button mat-raised-button color="accent" class="action-button" [routerLink]="['/listagem']">
+            <mat-icon class="icon-large">search</mat-icon>
+            <span>Pacientes</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="home-footer">
+  <mat-card class="footer-card gradient-bg">
+    <mat-card-content>
+      <div class="footer-text">👨‍💻 Desenvolvido por <strong>Rafael Sales</strong></div>
+    </mat-card-content>
+  </mat-card>
+</div>
